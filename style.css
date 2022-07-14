@@ -5,6 +5,14 @@ body {
   box-sizing: border-box;
 }
 
+button {
+  font-size: 24px;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
 /*div {
   border: 1px solid black;
 }*/
@@ -18,8 +26,14 @@ body {
 }
 
 .display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1em;
   height: 100px;
   margin: 25px 25px 0px 25px;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 .buttons {
@@ -44,14 +58,6 @@ body {
 
 .zero-button {
   width: 200%;
-}
-
-button {
-  font-size: 24px;
-  font-weight: bold;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
 }
 
 .zero-border {

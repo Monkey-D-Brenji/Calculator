@@ -1,3 +1,6 @@
+const display = document.querySelector(".display");
+const numbers = document.querySelectorAll(".number");
+
 function add(a, b) {
   return a + b;
 }
@@ -25,3 +28,14 @@ function calculate(a, b, c) {
     return divide(a, b);
   }
 }
+
+function clear() {
+  display.textContent = "0";
+}
+
+numbers.forEach((number) => {
+  number.addEventListener("click", () => {
+    if (display.textContent == 0) display.textContent = "";
+    display.textContent += number.value;
+  });
+});

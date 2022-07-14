@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="calculator">
-      <div class="display"></div>
+      <div class="display">0</div>
       <div class="buttons">
         <div class="buttons-row">
           <div class="individual-button">
@@ -28,13 +28,13 @@
         </div>
         <div class="buttons-row">
           <div class="individual-button">
-            <button>7</button>
+            <button class="number" value="7">7</button>
           </div>
           <div class="individual-button">
-            <button>8</button>
+            <button class="number" value="8">8</button>
           </div>
           <div class="individual-button">
-            <button>9</button>
+            <button class="number" value="9">9</button>
           </div>
           <div class="individual-button">
             <button>X</button>
@@ -42,13 +42,13 @@
         </div>
         <div class="buttons-row">
           <div class="individual-button">
-            <button>4</button>
+            <button class="number" value="4">4</button>
           </div>
           <div class="individual-button">
-            <button>5</button>
+            <button class="number" value="5">5</button>
           </div>
           <div class="individual-button">
-            <button>6</button>
+            <button class="number" value="6">6</button>
           </div>
           <div class="individual-button">
             <button>-</button>
@@ -56,13 +56,13 @@
         </div>
         <div class="buttons-row">
           <div class="individual-button">
-            <button>1</button>
+            <button class="number" value="1">1</button>
           </div>
           <div class="individual-button">
-            <button>2</button>
+            <button class="number" value="2">2</button>
           </div>
           <div class="individual-button">
-            <button>3</button>
+            <button class="number" value="3">3</button>
           </div>
           <div class="individual-button">
             <button>+</button>
@@ -70,11 +70,11 @@
         </div>
         <div class="buttons-row">
           <div class="individual-button, zero-button">
-            <button class="zero-border">0</button>
+            <button class="number, zero-border">0</button>
           </div>
 
           <div class="individual-button">
-            <button>.</button>
+            <button class="number">.</button>
           </div>
           <div class="individual-button">
             <button>=</button>
