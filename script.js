@@ -15,13 +15,13 @@ function divide(a, b) {
 }
 
 function calculate(a, b, c) {
-  if (c === "+") {
-    add(a, b);
-  } else if (c === "-") {
-    subtract(a, b);
-  } else if (c === "*") {
-    multiply(a, b);
+  if (c == "+") {
+    return add(a, b);
+  } else if (c == "-") {
+    return subtract(a, b);
+  } else if (c == "*") {
+    return multiply(a, b);
   } else {
-    divide(a, b);
+    return divide(a, b);
   }
 }
