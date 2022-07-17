@@ -79,6 +79,10 @@ equals.addEventListener("click", () => {
   num2 = parseFloat(num2);
   result = calculate(num, num2, operation);
   result = result.toFixed(1);
+  console.log(result);
+  if (result.includes(".0")) {
+    result = parseInt(result);
+  }
   display.textContent = result;
   num = result;
   operation = "";
@@ -98,6 +102,9 @@ operator.forEach((operator) => {
       num2 = parseFloat(num2);
       result = calculate(num, num2, operation);
       result = result.toFixed(1);
+      if (result.includes(".0")) {
+        result = parseInt(result);
+      }
       operation = operator.textContent;
       num = result;
       display.textContent = result;
