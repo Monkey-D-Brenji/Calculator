@@ -51,7 +51,8 @@ function clearDisplay() {
 
 numbers.forEach((number) => {
   number.addEventListener("click", () => {
-    if (display.textContent == 0) display.textContent = "";
+    let string = display.textContent.toString();
+    if (string === "0") display.textContent = "";
     display.textContent += number.textContent;
     if (operation === "") {
       num = display.textContent;
@@ -83,7 +84,13 @@ equals.addEventListener("click", () => {
 
 operator.forEach((operator) => {
   operator.addEventListener("click", () => {
-    operation = operator.textContent;
+    if (operation == "") {
+      operation = operator.textContent;
+    } else {
+      let result = calculate(num, num2, operation);
+      operation = operator.textContent;
+      num = result;
+    }
     display.textContent = "0";
   });
 });
