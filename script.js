@@ -5,6 +5,7 @@ const clear = document.querySelector(".clear");
 const equals = document.querySelector(".equals");
 const operator = document.querySelectorAll(".operator");
 const negative = document.querySelector(".negative");
+const dot = document.querySelector(".dot");
 //const subtractOperator = document.querySelector(".subtract");
 //const multiplyOperator = document.querySelector(".multiply");
 //const divideOperator = document.querySelector(".divide");
@@ -58,6 +59,13 @@ numbers.forEach((number) => {
       num2 = display.textContent;
     }
   });
+});
+
+dot.addEventListener("click", () => {
+  let num = display.textContent.toString().split("");
+  if (!num.includes(".")) {
+    display.textContent += dot.textContent;
+  }
 });
 
 clear.addEventListener("click", () => {
