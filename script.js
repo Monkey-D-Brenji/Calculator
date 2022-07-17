@@ -99,6 +99,7 @@ operator.forEach((operator) => {
       num2 = undefined;
     } else {
       num = parseFloat(num);
+      if (num2 == undefined) num2 = result;
       num2 = parseFloat(num2);
       result = calculate(num, num2, operation);
       result = result.toFixed(1);
