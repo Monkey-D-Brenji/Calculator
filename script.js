@@ -41,11 +41,6 @@ function calculate(a, b, c) {
   }
 }
 
-function makeNegative(a) {
-  a = -a;
-  if (a < 0) a = +a;
-}
-
 function clearDisplay() {
   display.textContent = "0";
   num = 0;
@@ -86,7 +81,10 @@ operator.forEach((operator) => {
 });
 
 negative.addEventListener("click", () => {
-  makeNegative(display.textContent);
+  let num = display.textContent;
+  num = num * -1;
+  console.log(num);
+  display.textContent = num;
 });
 
 backSpace.addEventListener("click", () => {
