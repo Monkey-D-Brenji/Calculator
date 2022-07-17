@@ -6,12 +6,10 @@ const equals = document.querySelector(".equals");
 const operator = document.querySelectorAll(".operator");
 const negative = document.querySelector(".negative");
 const dot = document.querySelector(".dot");
-//const subtractOperator = document.querySelector(".subtract");
-//const multiplyOperator = document.querySelector(".multiply");
-//const divideOperator = document.querySelector(".divide");
 
 let num;
 let num2;
+let result;
 let operation = "";
 
 function add(a, b) {
@@ -46,6 +44,7 @@ function clearDisplay() {
   display.textContent = "0";
   num = 0;
   num2 = 0;
+  result = 0;
   operation = "";
 }
 
@@ -53,6 +52,7 @@ numbers.forEach((number) => {
   number.addEventListener("click", () => {
     let string = display.textContent.toString();
     if (string === "0") display.textContent = "";
+    if (display.textContent == result) display.textContent = "";
     display.textContent += number.textContent;
     if (operation === "") {
       num = display.textContent;
@@ -71,35 +71,43 @@ dot.addEventListener("click", () => {
 
 clear.addEventListener("click", () => {
   clearDisplay();
-  //num = display.textContent;
 });
 
 equals.addEventListener("click", () => {
-  num = parseInt(num);
-  num2 = parseInt(num2);
+  num = parseFloat(num);
+  num2 = parseFloat(num2);
   result = calculate(num, num2, operation);
+  result = result.toFixed(1);
   display.textContent = result;
   num = result;
+  operation = "";
+  if (!num2) {
+    display.textContent = "Error";
+  }
 });
 
 operator.forEach((operator) => {
   operator.addEventListener("click", () => {
     if (operation == "") {
       operation = operator.textContent;
+      result = num;
     } else {
-      let result = calculate(num, num2, operation);
+      num = parseFloat(num);
+      num2 = parseFloat(num2);
+      result = calculate(num, num2, operation);
+      result = result.toFixed(1);
       operation = operator.textContent;
       num = result;
+      display.textContent = result;
     }
-    display.textContent = "0";
   });
 });
 
 negative.addEventListener("click", () => {
-  let num = display.textContent;
-  num = num * -1;
-  console.log(num);
-  display.textContent = num;
+  let neg = display.textContent;
+  neg = neg * -1;
+  display.textContent = neg;
+  num = neg;
 });
 
 backSpace.addEventListener("click", () => {
