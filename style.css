@@ -11,6 +11,7 @@ button {
   height: 100%;
   width: 100%;
   border-radius: 50%;
+  background-color: rgb(248, 218, 142);
 }
 
 /*div {
@@ -23,6 +24,7 @@ button {
   margin-top: 5em;
   height: 800px;
   width: 600px;
+  background-color: rgb(179, 179, 179);
 }
 
 .display {
@@ -34,6 +36,7 @@ button {
   margin: 25px 25px 0px 25px;
   font-weight: bold;
   font-size: 50px;
+  background-color: antiquewhite;
 }
 
 .buttons {
@@ -68,4 +71,9 @@ button {
 .display {
   border-radius: 10px;
   border: 2px solid black;
+}
+
+.operator,
+.equals {
+  background-color: rgb(243, 191, 77);
 }
