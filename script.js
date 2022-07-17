@@ -52,7 +52,8 @@ numbers.forEach((number) => {
   number.addEventListener("click", () => {
     let string = display.textContent.toString();
     if (string === "0") display.textContent = "";
-    if (display.textContent == result) display.textContent = "";
+    if (display.textContent == result && num2 == undefined)
+      display.textContent = "";
     display.textContent += number.textContent;
     if (operation === "") {
       num = display.textContent;
@@ -91,6 +92,7 @@ operator.forEach((operator) => {
     if (operation == "") {
       operation = operator.textContent;
       result = num;
+      num2 = undefined;
     } else {
       num = parseFloat(num);
       num2 = parseFloat(num2);
@@ -99,6 +101,7 @@ operator.forEach((operator) => {
       operation = operator.textContent;
       num = result;
       display.textContent = result;
+      num2 = undefined;
     }
   });
 });
