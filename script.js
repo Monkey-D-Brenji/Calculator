@@ -89,4 +89,14 @@ negative.addEventListener("click", () => {
   makeNegative(display.textContent);
 });
 
-backSpace.addEventListener("click", () => {});
+backSpace.addEventListener("click", () => {
+  let string = display.textContent.toString();
+  let newString = string
+    .split("")
+    .splice(0, string.length - 1)
+    .join("");
+  display.textContent = newString;
+  if (display.textContent == "") {
+    display.textContent = 0;
+  }
+});
